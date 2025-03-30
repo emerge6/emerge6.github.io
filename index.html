@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #d63384;
+        }
+        .command {
+            background: #f8d7da;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #d63384;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .copy-btn:hover {
+            background: #a12666;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animated {
+            animation: fadeIn 0.6s ease-out;
+        }
+        .links {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .links a {
+            display: block;
+            margin: 5px 0;
+            color: #d63384;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container animated">
+        <h1>Добро пожаловать в Хендбук</h1>
+        <p>Этот хендбук поможет вам установить и настроить Openbase GNU/Linux</p>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <h2>Команда</h2>
+        <p>Запустите следующую команду:</p>
+        <div class="command">
+            <button class="copy-btn" onclick="copyText(this)">📋</button>
+            <code>bash script.sh</code>
+        </div>
+        <h2>Команда</h2>
+        <p>Запустите следующую команду:</p>
+        <div class="command">
+            <button class="copy-btn" onclick="copyText(this)">📋</button>
+            <code>bash script.sh</code>
+        </div>
+        <h2>Команда</h2>
+        <p>Запустите следующую команду:</p>
+        <div class="command">
+            <button class="copy-btn" onclick="copyText(this)">📋</button>
+            <code>bash script.sh</code>
+        </div>
+        <h2>Команда</h2>
+        <p>Запустите следующую команду:</p>
+        <div class="command">
+            <button class="copy-btn" onclick="copyText(this)">📋</button>
+            <code>bash script.sh</code>
+        </div>
+        <h2>Команда</h2>
+        <p>Запустите следующую команду:</p>
+        <div class="command">
+            <button class="copy-btn" onclick="copyText(this)">📋</button>
+            <code>bash script.sh</code>
+        </div>
+        <h2>Команда</h2>
+        <p>Запустите следующую команду:</p>
+        <div class="command">
+            <button class="copy-btn" onclick="copyText(this)">📋</button>
+            <code>bash script.sh</code>
+        </div>
+        <h2>Команда</h2>
+        <p>Запустите следующую команду:</p>
+        <div class="command">
+            <button class="copy-btn" onclick="copyText(this)">📋</button>
+            <code>bash script.sh</code>
+        </div>
+        <h2>Команда</h2>
+        <p>Запустите следующую команду:</p>
+        <div class="command">
+            <button class="copy-btn" onclick="copyText(this)">📋</button>
+            <code>bash script.sh</code>
+        </div>
+        <h2>Команда</h2>
+        <p>Запустите следующую команду:</p>
+        <div class="command">
+            <button class="copy-btn" onclick="copyText(this)">📋</button>
+            <code>bash script.sh</code>
+        </div>
+        
+        <div class="links">
+            <h2>Полезные ссылки</h2>
+            <a href="https://t.me/openbaselinux" target="_blank">Телеграм-канал дистрибутива</a>
+            <a href="https://t.me/+jnz-Dk-YvBQwNzli" target="_blank">Чат дистрибутива</a>
+        </div>
+    </div>
+
+    <script>
+        function copyText(button) {
+            const codeElement = button.nextElementSibling;
+            navigator.clipboard.writeText(codeElement.textContent).then(() => {
+                button.textContent = '✔';
+                setTimeout(() => button.textContent = '📋', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
