@@ -69,23 +69,30 @@
         .links a:hover {
             text-decoration: underline;
         }
+        .nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .nav a {
+            margin: 0 10px;
+            color: #d63384;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav a.active {
+            color: #a12666;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container animated">
+        <div class="nav">
+            <a href="index.html" class="active">Handbook</a>
+            <a href="basebuild.html">Basebuild</a>
+        </div>
         <h1>Добро пожаловать в Хендбук</h1>
         <p>Этот хендбук поможет вам установить и настроить Openbase GNU/Linux</p>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         <h2>Команда</h2>
         <p>Запустите следующую команду:</p>
         <div class="command">
@@ -140,15 +147,12 @@
             <button class="copy-btn" onclick="copyText(this)">📋</button>
             <code>bash script.sh</code>
         </div>
-        
         <div class="links">
-    <h2>Полезные ссылки</h2>
-    <a href="https://t.me/openbaselinux" target="_blank">Телеграм-канал дистрибутива</a>
-    <a href="https://t.me/+jnz-Dk-YvBQwNzli" target="_blank">Чат дистрибутива</a>
-    <a href="basebuild.html">Руководство по basebuild</a>
+            <h2>Полезные ссылки</h2>
+            <a href="https://t.me/openbaselinux" target="_blank">Телеграм-канал дистрибутива</a>
+            <a href="https://t.me/+jnz-Dk-YvBQwNzli" target="_blank">Чат дистрибутива</a>
+        </div>
     </div>
-    </div>
-
     <script>
         function copyText(button) {
             const codeElement = button.nextElementSibling;
