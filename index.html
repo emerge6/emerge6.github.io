@@ -93,35 +93,37 @@
         </div>
         <h1>Добро пожаловать в Хендбук</h1>
         <p>Этот хендбук поможет вам установить и настроить Openbase GNU/Linux</p>
-        <h2>Команда</h2>
+        <h2>Разметка дисков</h2>
         <p>Запустите следующую команду:</p>
         <div class="command">
             <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>bash script.sh</code>
+            <code>cfdisk /dev/sda</code>
         </div>
-        <h2>Команда</h2>
+        <h2>Настройка сети</h2>
         <p>Запустите следующую команду:</p>
         <div class="command">
             <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>bash script.sh</code>
+            <code>rc-service iwd start && iwctl</code>
         </div>
-        <h2>Команда</h2>
+        <h2>Установка файла stage</h2>
         <p>Запустите следующую команду:</p>
         <div class="command">
             <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>bash script.sh</code>
+            <code>wget http://192.168.0.106:8080/stage3-openbase.tar.xz</code>
         </div>
-        <h2>Команда</h2>
+        <h2>Установка базовой системы</h2>
         <p>Запустите следующую команду:</p>
         <div class="command">
             <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>bash script.sh</code>
+            <code>tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner</code>
         </div>
-        <h2>Команда</h2>
+        <h2>Настройка ядра</h2>
         <p>Запустите следующую команду:</p>
-        <div class="command">
-            <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>bash script.sh</code>
+        <div class="command" style="position: relative; margin-bottom: 1em;">
+            <button class="copy-btn" onclick="copyText(this)" style="position: absolute; top: 10px; right: 10px;">📋</button>
+            <pre style="background: #f5f5f5; padding: 1em; border-radius: 8px; overflow-x: auto; white-space: pre-wrap;"><code>bash script.sh</code></pre>
+        </div>
+
         </div>
         <h2>Команда</h2>
         <p>Запустите следующую команду:</p>
