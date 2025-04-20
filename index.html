@@ -1,168 +1,178 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handbook</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffe6f2;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #d63384;
-        }
-        .command {
-            background: #f8d7da;
-            padding: 10px;
-            border-radius: 5px;
-            font-family: monospace;
-            position: relative;
-        }
-        .copy-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: #d63384;
-            color: white;
-            border: none;
-            padding: 5px;
-            cursor: pointer;
-            border-radius: 3px;
-            font-size: 12px;
-        }
-        .copy-btn:hover {
-            background: #a12666;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animated {
-            animation: fadeIn 0.6s ease-out;
-        }
-        .links {
-            margin-top: 20px;
-            padding: 15px;
-            background: #f1f1f1;
-            border-radius: 5px;
-            text-align: center;
-        }
-        .links a {
-            display: block;
-            margin: 5px 0;
-            color: #d63384;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-        .nav {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .nav a {
-            margin: 0 10px;
-            color: #d63384;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .nav a.active {
-            color: #a12666;
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Handbook</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffe6f2;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #d63384;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .command {
+      position: relative;
+      background: #f8d7da;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+
+    .command code {
+      white-space: pre-wrap;
+      display: block;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #d63384;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 12px;
+      transition: background 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: #a12666;
+    }
+
+    .nav {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .nav a {
+      margin: 0 15px;
+      color: #d63384;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav a.active {
+      color: #a12666;
+      text-decoration: underline;
+    }
+
+    .links {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f1f1f1;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .links a {
+      display: block;
+      margin: 8px 0;
+      color: #d63384;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="container animated">
-        <div class="nav">
-            <a href="index.html" class="active">Handbook</a>
-            <a href="basebuild.html">Basebuild</a>
-        </div>
-        <h1>Добро пожаловать в Хендбук</h1>
-        <p>Этот хендбук поможет вам установить и настроить Openbase GNU/Linux</p>
-        <h2>Разметка дисков</h2>
-        <p>Запустите следующую команду:</p>
-        <div class="command">
-            <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>cfdisk /dev/sda</code>
-        </div>
-        <h2>Настройка сети</h2>
-        <p>Запустите следующую команду:</p>
-        <div class="command">
-            <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>rc-service iwd start && iwctl</code>
-        </div>
-        <h2>Установка файла stage</h2>
-        <p>Запустите следующую команду:</p>
-        <div class="command">
-            <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>wget http://192.168.0.106:8080/stage3-openbase.tar.xz</code>
-        </div>
-        <h2>Установка базовой системы</h2>
-        <p>Запустите следующую команду:</p>
-        <div class="command">
-            <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner</code>
-        </div>
-        <h2>Настройка ядра</h2>
-        <p>Запустите следующую команду:</p>
-        <div class="command" style="position: relative; margin-bottom: 1em;">
-            <button class="copy-btn" onclick="copyText(this)" style="position: absolute; top: 10px; right: 10px;">📋</button>
-            <pre style="background: #f5f5f5; padding: 1em; border-radius: 8px; overflow-x: auto; white-space: pre-wrap;"><code>bash script.sh</code></pre>
-        </div>
-
-        </div>
-        <h2>Команда</h2>
-        <p>Запустите следующую команду:</p>
-        <div class="command">
-            <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>bash script.sh</code>
-        </div>
-        <h2>Команда</h2>
-        <p>Запустите следующую команду:</p>
-        <div class="command">
-            <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>bash script.sh</code>
-        </div>
-        <h2>Команда</h2>
-        <p>Запустите следующую команду:</p>
-        <div class="command">
-            <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>bash script.sh</code>
-        </div>
-        <h2>Команда</h2>
-        <p>Запустите следующую команду:</p>
-        <div class="command">
-            <button class="copy-btn" onclick="copyText(this)">📋</button>
-            <code>bash script.sh</code>
-        </div>
-        <div class="links">
-            <h2>Полезные ссылки</h2>
-            <a href="https://t.me/openbaselinux" target="_blank">Телеграм-канал дистрибутива</a>
-            <a href="https://t.me/+jnz-Dk-YvBQwNzli" target="_blank">Чат дистрибутива</a>
-        </div>
+  <div class="container">
+    <div class="nav">
+      <a href="index.html" class="active">Handbook</a>
+      <a href="basebuild.html">Basebuild</a>
     </div>
-    <script>
-        function copyText(button) {
-            const codeElement = button.nextElementSibling;
-            navigator.clipboard.writeText(codeElement.textContent).then(() => {
-                button.textContent = '✔';
-                setTimeout(() => button.textContent = '📋', 2000);
-            });
-        }
-    </script>
+
+    <h1>Добро пожаловать в Хендбук</h1>
+    <p>Этот хендбук поможет вам установить и настроить Openbase GNU/Linux.</p>
+
+    <h2>Разметка дисков</h2>
+    <p>Запустите следующую команду:</p>
+    <div class="command">
+      <button class="copy-btn" onclick="copyText(this)">📋</button>
+      <code>cfdisk /dev/sda</code>
+    </div>
+
+    <h2>Настройка сети</h2>
+    <p>Запустите следующую команду:</p>
+    <div class="command">
+      <button class="copy-btn" onclick="copyText(this)">📋</button>
+      <code>rc-service iwd start && iwctl</code>
+    </div>
+
+    <h2>Загрузка файла stage</h2>
+    <p>Скачайте архив:</p>
+    <div class="command">
+      <button class="copy-btn" onclick="copyText(this)">📋</button>
+      <code>wget http://192.168.0.106:8080/stage3-openbase.tar.xz</code>
+    </div>
+
+    <h2>Распаковка stage3</h2>
+    <p>Выполните команду:</p>
+    <div class="command">
+      <button class="copy-btn" onclick="copyText(this)">📋</button>
+      <code>tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner</code>
+    </div>
+
+    <h2>Настройка ядра</h2>
+    <p>Запустите скрипт:</p>
+    <div class="command">
+      <button class="copy-btn" onclick="copyText(this)">📋</button>
+      <code>bash script.sh</code>
+    </div>
+
+    <h2>Дополнительные команды</h2>
+    <p>Выполните при необходимости:</p>
+    <div class="command">
+      <button class="copy-btn" onclick="copyText(this)">📋</button>
+      <code>
+bash script.sh
+# или другая команда:
+bash другой_скрипт.sh
+      </code>
+    </div>
+
+    <div class="links">
+      <h2>Полезные ссылки</h2>
+      <a href="https://t.me/openbaselinux" target="_blank">Телеграм-канал дистрибутива</a>
+      <a href="https://t.me/+jnz-Dk-YvBQwNzli" target="_blank">Чат дистрибутива</a>
+    </div>
+  </div>
+
+  <script>
+    function copyText(button) {
+      const codeElement = button.nextElementSibling;
+      const text = codeElement.textContent.trim();
+      navigator.clipboard.writeText(text).then(() => {
+        button.textContent = '✔';
+        setTimeout(() => button.textContent = '📋', 2000);
+      });
+    }
+  </script>
 </body>
 </html>
